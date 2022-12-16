@@ -1,0 +1,32 @@
+Resolución de ejercicios SQL:
+
+1) Name of window with AD_Window_ID = ‘100’:
+SELECT name 
+FROM AD_Window 
+WHERE AD_Window_ID = 100
+
+2) No supe resolver este ejercicio.
+
+3) List of all tabs in window with AD_Window_ID = ‘100’:
+SELECT *
+FROM AD_Tab 
+WHERE AD_Tab.AD_Window_ID = 100
+
+4) List of tab name + field name of all tabs in AD_Window_ID = ‘100’ sorted by tab
+name and field name:
+SELECT AD_Tab.name, AD_Field.name 
+FROM AD_Tab, AD_Field 
+WHERE AD_Tab.AD_Window_ID = 100
+ORDER BY AD_Tab.name, AD_Field.name
+
+5) Name and number of tabs of all windows:
+SELECT AD_Tab.name, AD_Tab.AD_Tab_ID
+FROM AD_Window, AD_Tab
+WHERE AD_Window.AD_Window_ID = AD_Tab.AD_Window_ID
+
+6) No supe resolver este ejercicio.
+
+7) Windows with more than 5 tabs:
+SELECT *
+FROM AD_Window 
+WHERE tabs > 5
