@@ -1,0 +1,163 @@
+Resolución de ejercicios JavaScript:
+
+1) Esta función nos permite calcular el cuadrado de un binomio.
+El primer alert arroja como resultado 25.
+El segundo alert arroja como resultado 81.
+El tercer alert arroja como resultado 2.
+El cuarto alert arroja como resultado "number".
+Éste último alert, contiente la expresión 'typeof', 
+que nos devuelve un string con el nombre del tipo de valor que le demos, en este caso,
+la expresión 'typeof(cuadradoDeA)', nos arroja 'number', ya que la variable cuadradoDeA
+tiene como valor un número.
+
+2) Para retornar la frase 'HELLO WORLD!' en minúsculas, usaría la función toLowerCase(),
+que hace lo contrario a la función toUpperCase(), es decir, 
+devuelve el string en letras minúsculas. El código seria el siguiente:
+
+var s2 = "HELLO WORLD!";
+alert(s2.toLowerCase());
+
+3) Resolveria el problema de la siguiente manera:
+
+mostrar = function(param){
+console.log(param);
+}
+mostrar("Openbravo!!!")
+
+4) La función para comprobar si una matriz es diagonal sería la siguiente:
+
+function es_diagonal(matriz) {
+    for (var i = 0; i < matriz.length; i++) {
+        for (var j = 0; j < matriz.length; j++) {
+            if (i !== j && matriz[i][j] !== 0) 
+              return false;
+        }
+    }
+    return true;
+}
+
+Resolución de ejercicios React Js:
+
+1) Que son las 'props' en un componente?
+Respuestas válidas:
+● Are the component parameters (Son parámetros del componente)
+● It is a mechanism to put data inside the component (Son un mecanismo para introducir información en el componente)
+
+2) Que es un componente?
+● An element that returns a function or class (Un elemento que retorna una función o una clase)
+
+3) Cual de estos tipos de componentes son válidos?
+Respuestas válidas:
+● Class Component
+● Component Function
+
+4) Que es el estado de un componente?
+El estado de un componente se lo denomina al lugar donde 
+se almacenan los valores de las props de dicho componente.
+
+5) Que son los métodos de 'lifecyle' de un componente?
+Todos los componentes en React tienen un 'lifecyle' que podemos
+controlar y manipular durante sus tres fases: 
+Mounting (Montaje): se crea el componente y se va renderizando en la aplicación.
+Updating (Actualización): se cambia un estado o variable de nuestro componente.
+Unmounting (Desmontaje): se quita/elimina el componente de la aplicación.
+
+6) Como se establece el estado de un componente?
+En el siguiente código establezco el estado de un componente llamado Remera:
+
+class Remera extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {color: "Rojo"}
+    }
+}
+
+Aqui se establece que el color de la remera es Rojo.
+
+7) Cual de las siguientes implementaciones cambia el estado de un componente?
+Respuesta válida:
+● this.setState({ value: "my value" })
+
+8) Que ocurre cuando cambiamos el estado de un componente?
+Cuando se cambia un valor del estado del componente, 
+éste mismo se volverá a renderizar.
+
+9) Escriba un componente que renderice una lista de elementos, dada una prop que
+contiene un array de objetos de la siguiente forma: { name: "demo",
+lastname: "demo", dni: 1234 }.
+
+const personas = [
+    {
+        name: "Silvana",
+        lastname: "Lopez",
+        dni: 112233
+    }
+    {
+        name: "Daniel",
+        lastname: "Rizzotti",
+        dni: 112244
+    }
+    {
+        name: "Agustin",
+        lastname: "Rizzotti",
+        dni: 332211
+    }
+]
+
+class Persona extends React.Component{
+    render(){
+        const listarPersonas = personas.map((prop) =>{
+            <ul>
+                <li>{prop.name}</li>
+                <li>{prop.lastname}</li>
+                <li>{prop.dni}</li>
+            </ul>
+        }
+    )
+    return (listarPersonas)
+}
+
+10) Escribe un componente que reciba un prop llamado "data", y renderice un H1
+con el contenido de "data".
+
+function App() {
+  return <Stock data = "No hay stock" />;
+}
+
+function Stock(props) {
+  return (
+    <h1>
+      En estos momentos {props.data}
+    </h1>
+  );
+}
+ReactDOM.render(<App />, document.getElementById("root"));
+
+11) Cómo se importan los módulos Javascript instalados con NPM o YARN?
+Respuesta válida:
+● import name from 'name';
+
+12) Cómo puedo importar el siguiente componente, teniendo en cuenta que está dentro de un archivo
+en el mismo directorio, llamado MyComponent.js?
+Respuesta válida:
+● import { MyComponent } from './MyComponent.js';
+
+13) No pude identificar el error.
+
+14) Lo que hace este componente es mostrar en pantalla el valor 1, 
+y un botón debajo, que al clickearlo suma 1 al valor mostrado anteriormente.
+Por lo que al clickear una vez dicho botón, el valor cambiará a 2, 
+si vuelves a clickear, cambiará a 3, y asi sucesivamente.
+
+15) El error que yo veo es que no se debe hacer el 'this.setState' dentro del render, sino fuera.
+
+16) Cómo se realiza una llamada Rest API desde JavaScript?
+Se que hay varias maneras de hacer llamadas Rest API, pero no sabria especificar cual es la mejor.
+Creo recordar algo similar a esto:
+request.open("GET", url);
+
+17) Para qué sirve el hook useEffect?
+El hook useEffect se utiliza para realizar nuevas funcionalidades
+luego de renderizar el componente que lo contiene.
+
+18) No supe realizar este ejercicio.
