@@ -1,0 +1,74 @@
+Resolución de ejercicios Java:
+
+1) Describe que es hibernate y para que es usado.
+Es una herramienta de mapeo que facilita la relación entre la aplicación 
+y la base de datos SQL, optimizando el flujo de trabajo.
+
+2) Magic Square in Java:
+
+public class solution {
+
+    public static void main(String[] args) { 
+	
+	    Scanner scan = new Scanner(System.in);
+        System.out.print("Input a number: ");
+        int num = scan.nextInt();
+        if ((num % 2 == 0) || (num <=0 ))
+        {
+            System.out.print("Input number must be odd and >0"); 			
+			System.exit(0); 
+		}
+
+        int[][] magic_square = new int[num][num];
+        int row_num = num-1;
+        int col_num = num/2;
+        magic_square[row_num][col_num] = 1;
+
+        for (int i = 2; i <= num*num; i++) {
+            if (magic_square[(row_num + 1) % num][(col_num + 1) % num] == 0) {
+                row_num = (row_num + 1) % num;
+                col_num = (col_num + 1) % num;
+            }
+            else {
+                row_num = (row_num - 1 + num) % num;                
+            }
+            magic_square[row_num][col_num] = i;
+        }
+        for (int i = 0; i < num; i++) {
+            for (int j = 0; j < num; j++) {
+                if (magic_square[i][j] < 10)  System.out.print(" ");   
+                if (magic_square[i][j] < 100) System.out.print(" ");  
+                System.out.print(magic_square[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+ACLARACION: Este ejercicio lo resolví con ayuda de internet, entendía lo que debia realizar 
+pero con mis pocos conocimiento de Java se me complicó para resolverlo por mis propios medios.
+
+3) Escribe un algoritmo que lleve todos los elementos no nulos a la izquierda de la matriz
+y devuelva el número de elementos distintos de cero.
+
+ESTE EJERCICIO LO RESOLVERÉ CON PYHTON:
+
+def ponerCerosAlFinal(array, n):
+    count = 0
+    count_ceros = 0
+    for i in range(n):
+        if array[i] != 0:
+            array[count] = arr[i]
+            count += 1
+        else:
+            count_ceros += 1
+    while count < n:
+        array[count] = 0
+        count += 1
+
+array = [1, 9, 8, 4, 0, 0, 2, 7, 0, 6, 0, 9]
+n = len(array)
+ponerCerosAlFinal(array, n)
+print(array)
+print(count_ceros)
+
+4)No pude resolver este ejercicio.
